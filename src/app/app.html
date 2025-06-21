@@ -1,10 +1,17 @@
 
-<main>
-  <todo-test></todo-test>
+<main class="container">
+    
+
+  <div>
+   <input type="text" [(ngModel)]="task">
+   <button (click)="addTask()">Add</button>
+</div>
+<div class="list-task">
+   <br><span class="task"  *ngFor="let task of tasks,let i=index">
+           {{task}}
+  
+           <button class="btn" (click)="deleteTask(i)">Delete</button>
+       </span> 
+   </div>
 
 </main>
-
-
-      
-    
-<router-outlet />
